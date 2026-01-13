@@ -59,15 +59,15 @@ class NeuralNetwork:
         predictions = self.predict(X)
         true_labels = np.argmax(y, axis=1)
         return np.mean(predictions == true_labels)
-    
-    class EvolutionaryAlgorithm:
-        def __init__(self, network_structure, pop_size=30, generations=50):
-            self.network_structure = network_structure
-            self.pop_size = pop_size
-            self.generations = generations
-            self.population = []
-            self.best_accuracy = 0
-            self.best_network = None
+
+class EvolutionaryAlgorithm:
+    def __init__(self, network_structure, pop_size=30, generations=50):
+        self.network_structure = network_structure
+        self.pop_size = pop_size
+        self.generations = generations
+        self.population = []
+        self.best_accuracy = 0
+        self.best_network = None
 
     def create_individual(self):
         return NeuralNetwork(self.network_structure)
